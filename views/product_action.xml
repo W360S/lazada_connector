@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="product_template_form_view">
+        <field name="name">product.template.product.lazada.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='sales']" position="after">
+                <page name="shop" string="Lazada" attrs="{'invisible': [('sale_ok','=',False)]}">
+                    <group name="shop">
+                        <group string="Product Additional Information">
+                            <field name="primary_category_id" string="Primary Category" domain="[('leaf', '=', True)]"/>
+                            <field name="model" string="Model"/>
+                            <field name="package_weight" string="Cân nặng (kg)"/>
+                            <field name="package_length" string="Dài (cm)"/>
+                            <field name="package_width" string="Rộng (cm)"/>
+                            <field name="package_height" string="Cao (cm)"/>
+                            <field name="short_description" string="Mô tả ngắn"/>
+                            <field name="description" string="Mô tả"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="sync_product_template_lazada_list" model="ir.ui.view">
+        <field name="name">sync.product.template.lazada.wizard.list</field>
+        <field name="model">lazada_connector.sync_product_template_wizard</field>
+        <field name="arch" type="xml">
+            <form string="Đồng bộ thông tin sản phẩm sang lazada">
+                <group string="Danh sách sản phẩm đã chọn">
+                    <field name="product_template_ids" nolabel="1">
+                        <tree create="false" edit="false">
+                            <field name="barcode"/>
+                            <field name="name"/>
+                            <field name="list_price"/>
+                            <field name="qty_available"/>
+                        </tree>
+                    </field>
+                </group>
+                <footer>
+                    <button name="sync_product_template_list" string="Đồng bộ" type="object" class="oe_highlight"/>
+                    <button string="Hủy" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    
+    <act_window id="action_sync_product_lazada_btn"
+                name="Đồng bộ sang Lazada"
+                binding_model="product.template"
+                res_model="lazada_connector.sync_product_template_wizard"
+                context="{'default_product_template_ids': active_ids}"
+                view_mode="form"
+                target="new"/>
+</odoo>

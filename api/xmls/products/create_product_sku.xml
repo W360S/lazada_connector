@@ -1,0 +1,13 @@
+<Sku>                 
+    <SellerSku></SellerSku>                 
+    <color_family></color_family>                 
+    <size></size>                 
+    <quantity></quantity>                 
+    <price></price>                 
+    <package_length></package_length>                 
+    <package_height></package_height>                 
+    <package_weight></package_weight>                 
+    <package_width></package_width>                 
+    <package_content></package_content>                 
+    <Images></Images>             
+</Sku> 

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Request>     
+ <Product>         
+  <PrimaryCategory/>   
+  <SPUId/>         
+  <AssociatedSku/>         
+  <Attributes>             
+   <name>api create product test sample</name>             
+   <short_description>This is a nice product</short_description>             
+   <brand>Remark</brand>             
+   <model>asdf</model>             
+   <kid_years>Kids (6-10yrs)</kid_years>         
+  </Attributes>         
+  <Skus>             
+   <Sku>                 
+    <SellerSku>api-create-test-1</SellerSku>                 
+    <color_family>Green</color_family>                 
+    <size>40</size>                 
+    <quantity>1</quantity>                 
+    <price>388.50</price>                 
+    <package_length>11</package_length>                 
+    <package_height>22</package_height>                 
+    <package_weight>33</package_weight>                 
+    <package_width>44</package_width>                 
+    <package_content>this is what's in the box</package_content>                 
+    <Images>                     
+     <Image>http://sg.s.alibaba.lzd.co/original/59046bec4d53e74f8ad38d19399205e6.jpg</Image>                     
+     <Image>http://sg.s.alibaba.lzd.co/original/179715d3de39a1918b19eec3279dd482.jpg</Image>                 
+    </Images>             
+   </Sku>         
+  </Skus>     
+ </Product> 
+</Request>
